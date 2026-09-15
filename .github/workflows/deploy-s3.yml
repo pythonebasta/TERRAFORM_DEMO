@@ -6,10 +6,6 @@ on:
       - 's3-bucket/**' # Parte solo se modifichi qualcosa in questa cartella
   workflow_dispatch:  # Ti permette di avviarlo manualmente dalla scheda "Actions"
 
-# Definiamo qui il nome del bucket a livello globale per tutto il workflow
-env:
-  TF_VAR_bucket_name: mio-demo-bucket-2026-per-terraform-progetto-demo
-
 jobs:
   terraform:
     runs-on: ubuntu-latest
@@ -38,7 +34,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan # <--- Legge in automatico da terraform.tfvars
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve # <--- Legge in automatico da terraform.tfvars
