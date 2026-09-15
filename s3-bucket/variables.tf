@@ -1,9 +1,9 @@
 variable "aws_region" {
-  type    = string
-  default = "eu-west-1"
+  type        = string
+  description = "La regione AWS dove fare il deploy"
 }
 
 variable "bucket_name" {
   type        = string
-  description = "Il nome univoco del bucket S3 passato dalla pipeline"
+  description = "Il nome del bucket S3"
 }
